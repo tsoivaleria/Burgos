@@ -8,6 +8,8 @@
     --light: #ffffff;
     --light-rgb: 255, 255, 255;
     --line: #DEDEDE;
+
+    --tr: .2s;
 }
 
 body{
@@ -68,6 +70,7 @@ a{
     height: 3px;
     background-color: transparent;
     border-radius: 1.5px;
+    transition: var(--tr);
 }
 .nav-link:hover::after{
     background-color: var(--accent-light);
@@ -135,6 +138,7 @@ a{
 
 .breadcrumps-link{
     color: rgba(var(--light-rgb), .5);
+    transition: var(--tr);
 }
 
 .breadcrumps-item{
@@ -235,6 +239,7 @@ a{
     border-radius: 5px;
     background-color: var(--accent-light);
     padding: 20px 26px;
+    transition: var(--tr);
 }
 
 .banner-btn:hover{
@@ -344,6 +349,7 @@ a{
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
+    transition: var(--tr);
 }
 
 .menu-btn::before{
@@ -354,4 +360,93 @@ a{
 
 .menu-btn:hover{
     background: var(--accent-dark);
+}
+
+/* Footer */
+
+footer {
+    margin-top: 140px;
+    background-color: #1E2F40;
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
+
+.footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo{
+    width: 63px;
+    height: 56px;
+    background-image: url(../images/logo-light-min.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 6px;
+
+}
+
+.footer-title{
+    color: var(--light);
+    font-family: var(--nunito-sans);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 190%;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.footer-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.footer-nav > a{
+    color: rgba(var(--light-rgb), 0.90);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 160%;
+    transition: var(--tr);
+}
+
+.footer-nav > a:hover{
+    color: var(--accent-light);
+}
+
+.footer-list{
+    list-style-type: none;
+    padding-left: 0;
+    margin:0;
+    color: var(--light);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+.footer-list-item:not(:last-child){
+    margin-bottom: 12px;
+}
+
+.footer-list li span{
+    display: block;
+    color: rgba(var(--light-rgb), 0.90);
+    font-weight: 400;
+}
+
+.footer-tel{
+    display: block;
+    color: var(--accent-light);
+    font-family: var(--nunito-sans);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 190%;
+    text-transform: uppercase;
+    margin-top: 12px;
+    transition: var(--tr);
+}
+
+.footer-tel:hover{
+    color: rgba(var(--light-rgb), 0.90);
 }
