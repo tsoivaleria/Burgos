@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgos</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN-ipT0p01pB4y-73oG80pj3SknAOpvDU"></script>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo"></div>
+                    <nav class="nav">
+                        <a href="index.html" class="nav-link">Main</a>
+                        <a href="#" class="nav-link">Menu</a>
+                        <a href="#" class="nav-link">About us</a>
+                        <a href="contact.html" class="nav-link">Contacts</a>
+                    </nav>
+                    <a href="#" class="cart">$125 <span class="cart-count">5</span></a>
+            </div>
+        </div>
+    </header>
+    <section class="hero hero-contact">
+        <div class="container">
+            <ul class="breadcrumps">
+                <li class="breadcrumps-item"><a  class="breadcrumps-link"href="index.html">Main</a></li>
+                <li class="breadcrumps-item">Contacts</li>
+            </ul>
+            <h1 class="hero-title">Contacts</h1>
+            <p class="hero-description">Find out which city we work in to pick up your order yourself</p>
+        </div>
+    </section>
+    <main>
+        <div class="container">
+            <div class="contact">
+                <div class="contact-main">
+                    <div class="contact-map">   
+
+                        <div id="map"></div>
+                        <script>
+                            function initMap() {
+                                var center = { lat: 40.75257873535156, lng: -73.9860610961914 };
+                    
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 12,
+                                    center: center
+                                });
+
+                                var locations = [
+                                    { lat: 40.747474670410156, lng: -74.00411224365234, title: "NY 1" },
+                                    { lat: 40.7644157409668, lng: -73.97857666015625, title: "NY 2" },
+                                    { lat: 40.727394104003906, lng: -73.97974395751953, title: "NY 3" },
+                                    { lat: 40.73204803466797, lng: -74.00164031982422, title: "NY 4" }
+                                ];
+
+                                var infoWindow = new google.maps.InfoWindow();
+                    
+                                locations.forEach(function(location) {
+                                                    var marker = new google.maps.Marker({
+                                                        position: { lat: location.lat, lng: location.lng },
+                                                        map: map,
+                                                        title: location.title
+                                                    });
+
+                                    marker.addListener('click', function() {
+                                        infoWindow.setContent(location.title);
+                                        infoWindow.open(map, marker);
+                                    });
+                                });
+                            }
+
+                            initMap();
+                        </script>
+
+                    </div>
+                    <ul class="contact-adress">
+                        <li>
+                            <span>New York 1</span>
+                            470 W 23rd St, New York, NY 10011
+                            <span>Free delivery</span>
+                        </li>
+                        <li>
+                            <span>New York 2</span>
+                            119 W 56th St, New York, NY 10019
+                            <span>Free delivery from $20</span>
+                        </li>
+                        <li>
+                            <span>New York 3</span>
+                            168 Avenue B, New York, NY 10009
+                            <span>Free delivery from $20</span>
+                        </li>
+                        <li>
+                            <span>New York 4</span>
+                            170 West 4th Street, New York, NY 10014
+                            <span>Free delivery from $50</span>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="contact-additionally">
+                    <li>
+                        <span>
+                            Opening hours
+                            <span class="contact-info">
+                                Mon - Sun<br>
+                                11:00 - 00:00
+                            </span>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            Phones
+                            <a class="contact-tel" href="tel:+79007871313">+1&nbsp29&nbsp000&nbsp00&nbsp00</a>
+                            <a class="contact-tel" href="tel:+79007001414">+1&nbsp29&nbsp000&nbsp00&nbsp01</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            Quality Department
+                            <span class="contact-info">
+                                New York, 10011<br>
+                                470 W 23rd St
+                            </span>
+                        </span>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <a href="#" class="footer-logo"></a>
+            <div class="footer-item">
+                <h3 class="footer-title">Main links</h3>
+                <nav class="footer-nav">
+                    <a href="#">Menu</a>
+                    <a href="#">Order & Delivery</a>
+                    <a href="#">Payments methods</a>
+                    <a href="contact.html">Conacts</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h3 class="footer-title">Information</h3>
+                <ul class="footer-list">
+                    <li>
+                        <span>Time</span>
+                        Mon - Sun<br>
+                        11:00 - 22:00 without breaks
+                    </li>
+                    <li>
+                        <span>Address</span>
+                        New York, Avenue 34
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <a href="tel:+1290000000" class="footer-tel">+1&nbsp29&nbsp000&nbsp00&nbsp00</a>
+                <a href="tel:+1290000001" class="footer-tel">+1&nbsp29&nbsp000&nbsp00&nbsp01</a>
+            </div>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

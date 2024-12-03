@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта магазинов</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN-ipT0p01pB4y-73oG80pj3SknAOpvDU"></script>
+    <style>
+        #map {
+            height: 500px; /* Задайте высоту карты */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            // Центр карты
+            var center = { lat: 55.751244, lng: 37.618423 }; // Москва
+
+            // Создание карты
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: center
+            });
+
+            // Локации магазинов
+            var locations = [
+                { lat: 55.751244, lng: 37.618423, title: "Магазин 1" },
+                { lat: 55.760, lng: 37.610, title: "Магазин 2" },
+                { lat: 55.748, lng: 37.620, title: "Магазин 3" }
+            ];
+
+            // Добавление маркеров
+            locations.forEach(function(location) {
+                new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.title
+                });
+            });
+        }
+
+        // Инициализация карты
+        initMap();
+    </script>
+</body>
+</html>
