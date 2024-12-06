@@ -26,6 +26,7 @@ a{
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -37,15 +38,27 @@ a{
 .header-wrapper{
     display: flex;
     align-items: center;
-    gap:196px;
+    gap:56px;
     padding-top: 26px;
     padding-bottom: 26px;
+}
+
+.burger-menu{
+    display:none;
+    width: 34px;
+    height: 22px;
+    background-image: url(../images/burger-menu.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
 }
 
 .nav{
     flex-grow: 1;
     display: flex;
     gap:47px;
+    margin-left: min(10vw, 140px);
 }
 
 .logo{
@@ -109,6 +122,36 @@ a{
     position: absolute;
     left: 17px;
     bottom: 0;
+}
+
+.button-up{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    color: var(--dark);
+    text-align: center;
+    font-family: var(--nunito-sans);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 129%;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-light);
+    padding: 5px 10px;
+    transition: var(--tr); 
+}
+
+.button-up:hover{
+    background-color: var(--accent-dark);  
+}
+
+.button-up.hidden{
+    opacity:0;
+}
+
+.button-up.visible{
+    opacity:1;
 }
 
 /* Hero */
@@ -232,6 +275,8 @@ a{
 }
 
 .banner-btn{
+    display: block;
+    max-width: 170px;
     color: var(--dark);
     text-align: center;
     font-family: var(--nunito-sans);
@@ -242,7 +287,7 @@ a{
     border: none;
     border-radius: 5px;
     background-color: var(--accent-light);
-    padding: 20px 26px;
+    padding: 20px 0;
     transition: var(--tr);
 }
 
@@ -378,6 +423,7 @@ footer {
 .footer-wrapper{
     display: flex;
     justify-content: space-between;
+    gap:15px;
 }
 
 .footer-logo{
@@ -405,6 +451,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 9px;
+
 }
 
 .footer-nav > a{
@@ -451,8 +498,15 @@ footer {
     transition: var(--tr);
 }
 
+.footer-tel._mobile{
+    display: none;
+}
+
 .footer-tel:hover{
     color: rgba(var(--light-rgb), 0.90);
+}
+.modal{
+    display: none;
 }
 
 /* Contacts */
@@ -553,4 +607,219 @@ footer {
 
 .contact-tel:hover {
     color: var(--accent-light);
+}
+
+/* Media */
+
+@media (max-width: 1080px){
+    .header-wrapper{
+        gap: 40px;
+    }
+    .nav{
+        margin-left: 0;
+        gap: min(3vw, 30px);
+    }
+    .banner-wrapper {
+        padding: 100px 40px;
+        background-position: center left;
+    }
+}
+
+@media (max-width: 768px){
+    .logo{
+        width: 150px;
+        height: 47.81px;
+    }
+    .header-wrapper{
+        gap: 45px;
+    }
+    .nav{
+        gap: 22px;
+    }
+    .banner{
+        margin-top: 72px;
+    }
+    .banner-wrapper{
+        padding: 100px 40px;
+    }
+    .menu-header{
+        margin-top: 80px;
+    }
+    .menu-box{
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .menu-box._additionally{
+        grid-template-columns: 1fr;
+    }
+    .menu-item._additionally{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .menu-item._additionally .menu-thumb{
+        flex-basis: calc(60% - 20px);
+        margin-bottom: 0;
+        height: 260px;
+    }
+    .menu-item._additionally .menu-info{
+        flex-basis: 40%;
+    }
+    footer {
+        padding-top: 62px;
+        padding-bottom: 71px;
+    }
+    .footer-nav{
+        margin-bottom: 20px;
+    }
+    .footer-item:last-child{
+        display: none;
+    }
+    .footer-tel._mobile{
+        display: block;
+    }
+}
+
+@media (max-width: 730px){
+    .header-wrapper {
+        gap: 21px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
+    .nav{
+        display: none;
+    }
+    .nav._modal{
+        display:flex;
+        flex-direction: column;
+    }
+    .nav-link::after {
+        display: none;
+    }
+    .burger-menu{
+        display:block;
+    }
+    .logo {
+        flex-grow: 1;
+        width: 116px;
+        height: 37px;
+    }
+    .modal{
+        width: 100%;
+        max-width: 500px;
+        background-color: #FFF8DC;
+        padding: 40px 15px;
+        position: absolute;
+        top: -400px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: center;
+        transition: var(--tr);
+    }
+    .modal-close{
+        display: block;
+        width: 22px;
+        height: 22px;
+        background-image: url(../images/close.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        position:absolute;
+        top:20px;
+        right:20px;
+    }
+    .banner{
+        margin-top: 33px;
+    }
+    .hero-title {
+        font-size: 38px;
+    }
+    .hero-description {
+        font-size: 12px;
+    }
+    .hero {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+    .banner-wrapper {
+        padding: 35px 15px;
+    }
+    .banner-btn {
+        max-width: 196px;
+    }
+    .banner-description {
+        max-width: 222px;
+    }
+    .menu-header {
+        margin-top: 58px;
+        margin-bottom: 30px;
+    }
+    .menu-title {
+        font-size: 27px;
+    }
+    .menu-select {
+        font-size: 12px;
+        flex-basis: 136px;
+        width: 136px;
+        background-position: 93% center;
+        padding: 13px 15px;
+    }
+    .menu-box {
+        gap: 24px 20px;
+    }
+    .menu-name {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    .menu-price {
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+    .menu-thumb {
+        margin-bottom: 10px;
+        height: 50vw;
+    }
+    .menu-item._additionally .menu-thumb {
+        height: 30vw;
+    }
+    .menu-btn {
+        padding: 11px 22px;
+    }
+    .footer{
+        margin-top:80px;
+    }
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 35px;
+        position: relative;
+    }
+    .footer-logo {
+        margin-bottom: 9px;
+    }
+    .footer-nav {
+        margin-bottom: 0;
+    }
+    .footer-tel._mobile {
+        position: absolute;
+        top: -13px;
+        right: 0;
+    }
+    .footer-tel._mobile + .footer-tel._mobile{
+        top: 24px;
+    }
+    .footer-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:450px){
+    .menu-item._additionally .menu-thumb {
+        height: 38vw;
+        flex-basis: calc(100% - 130px - 20px);
+    }
+    .menu-item._additionally .menu-info {
+        flex-basis: 130px;
+    }
 }
