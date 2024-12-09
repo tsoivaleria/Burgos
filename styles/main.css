@@ -505,9 +505,6 @@ footer {
 .footer-tel:hover{
     color: rgba(var(--light-rgb), 0.90);
 }
-.modal{
-    display: none;
-}
 
 /* Contacts */
 
@@ -607,6 +604,12 @@ footer {
 
 .contact-tel:hover {
     color: var(--accent-light);
+}
+.nav._modal{
+    display:none;
+}
+.modal-close{
+    display: none;
 }
 
 /* Media */
