@@ -134,9 +134,9 @@ a{
     font-weight: 700;
     line-height: 129%;
     text-transform: uppercase;
-    border: none;
+    border: 1px solid var(--accent-light);
     border-radius: 5px;
-    background-color: var(--accent-light);
+    background-color: rgba(var(--light-rgb), .5);
     padding: 5px 10px;
     transition: var(--tr); 
 }
