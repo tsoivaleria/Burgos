@@ -635,10 +635,29 @@ footer {
         width: 100%;
         flex-basis: auto;
     }
-    .contact-additionally {
-        flex-direction: column;
+    .contact-all{
+        width: 100%;
+    }
+    .contact-adress{
+        flex-basis: auto;
+        flex-wrap: wrap;
+    }
+    ul {
+        display: flex;
+        gap: 20px;
+    }
+    .contact-adress > li {
+        margin-bottom: 26px;
+        max-width: 300px;
+    }
+    .contact-additionally{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content:flex-start;
+        gap: 25px;
     }
     .contact-additionally > li {
+        max-width: 265px;
         gap: 25px;
     }
 }
